@@ -92,7 +92,7 @@ public class DBOperations {
 			tmpQuantity = rs.getInt(1);
 			tmpQuantity = tmpQuantity - quantity;
 			String query1 = "UPDATE "+sub_category +" SET QUANTITY ="+tmpQuantity +" WHERE PID="+ pid;
-			ResultSet rs1 = dbConnection.runQuery(query1);
+			dbConnection.runQuery(query1);
 			dbConnection.close();
 		}
 }

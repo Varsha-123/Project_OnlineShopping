@@ -1,27 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Home Page</title>
+	<title> Home</title>
+	<meta charset="UTF-8">	
+	<link rel="stylesheet" href="css/adminStyle.css">
+	<link rel="stylesheet" href="css/loginsignupStyle.css">
+	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 </head>
 
-<body style="background-color: black; color: white;">
-<h1 style = "text-align:center;"> Shopping spree </h1>
-<p style="text-align: right;">
-<input type="button" value="Contact" style="color:white;font-size:0.2in; background-color: black ;border:3pt"/> 
+<body>
 
-<input type="button" value="Cart" style="color:white;font-size:0.2in; background-color: black ;border:3pt"/> 
+<div class="flex-container">
+<header>
+  <h1 id="hdr"> Shopping Spree</h1>
+</header>
 
-<input type="button" value="Sign-Up" style="color:white;font-size:0.2in; background-color: black ;border:3pt" onclick = "location.href = 'http://localhost:8080/Webappn/SignUp.html'"/> 
+<nav class="nav">
+<ul>
+  <p><button class="w3-btn w3-red" onclick="document.getElementById('login-form').style = 'display:show';document.getElementById('signup-form').style = 'display:none'" 
+	  
+  id ="loginBtn">LOGIN</button></p>
+<p><button class="w3-btn w3-pink"  
+	  onclick="document.getElementById('signup-form').style = 'display:show';document.getElementById('login-form').style = 'display:none' "
+	  id = "signupBtn">SIGN UP</button></p>
 
-<input type="button" value="Login" style="color:white;font-size:0.2in; background-color: black ;border:3pt" onclick = "location.href = 'http://localhost:8080/Webappn/Login.html'" /> 
+</ul>
+</nav>
 
-<input type="submit" value = "Category" style="color:white;font-size:0.2in; background-color: black ;border:3pt" /> 
-</p>
+<article class="article">
+ 
+<div id ='login-form' style="display:none">
+<form action="LoginServlet" method="POST">
+<label for='userID'>USERNAME</label>
+<input type="text" name = "UserID" />
+<label for='password'>PASSWORD</label>
+<input type="password" name = "Password"/>
+<input class = 'formsubmit' type="submit" name = "Submit"/>
+</form>
+</div> 
+ 
+<div id ='signup-form' style = "display:none">
+<form action="SignUpServlet" method="POST">
+<label for='name'>USERNAME</label>
+<input type="text" name = "name" />
+<label for='pass'>PASSWORD</label>
+<input type="password" id = "pass" name = "pass" />
+<input class = 'formsubmit' type = "submit" id = "submit" name ="register" value = "Register" />
+</form>
+</div> 
+ 
+</article>
 
-<p style = "text-align:center">
-<input type="search" value = "Search" style = "color:black ; font-size : 0.4in ;" />
-</p>
+<footer>MSCI Training Project</footer>
+</div>
 
 </body>
 </html>
